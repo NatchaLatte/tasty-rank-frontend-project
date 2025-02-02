@@ -126,8 +126,13 @@ const sentimentCard = [{
   rating: 5,
   background: backgroundCard
 }]
-
-const selectCard = ref<any>(sentimentCard[0])
+interface sentimentCardType {
+    sentimentCard: string;
+    message: string;
+    rating: number;
+    background: string;
+}
+const selectCard = ref<sentimentCardType>(sentimentCard[0])
 
 const handleAnalyze = () => {
   selectCard.value = sentimentCard[Math.floor(Math.random() * sentimentCard.length)]
